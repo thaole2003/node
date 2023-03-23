@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/js/script.js">
+</head>
+<body>
+    <div class="topnav">
+        <a class="active" href="/">Home</a>
+        <!-- <a href="/upload">upfile</a> -->
+      
+      </div>
+      <a style="text-align: center;" href="adduser"><h2>thêm mới</h2></a>
+      <table>
+        <h2>list users</h2>
+        <tr>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>mail</th>
+          <th>action</th>
+        </tr>
+
+      <%   for (const item of datauser) { %>
+        <tr>
+            <td><%= item.firstname %></td>
+            <td><%= item.lastname %></td>
+            <td><%= item.mail %></td>
+            <td><a href="/detail/user/<%= item.id %>">detail</a>
+              <a onclick="acceptdelete('delete/user/<%= item.id %>')">delete</a>
+                <a href="/edit/user/<%= item.id %>">edit</a></td>
+         
+  
+          </tr>
+          <%     } %>
+
+       
+      </table>
+      <script>
+        const acceptdelete = (a) => {
+  if (confirm("bạn chắc chắn xóa?")) {
+    return (window.location = a);
+  }
+};
+      </script>
+    <!-- <%= datauser %> -->
+    <!-- <img src="/image/a.png" alt=""> -->
+</body>
+</html>
