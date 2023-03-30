@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/js/script.js">
+</head>
+<body>
+    <div class="topnav">
+        <a class="active" href="/">Home</a>
+        <a class="active" href="/upload">upload</a>
+        <a href="/category">category</a>
+      
+      </div>
+    <a href="/addcategory">thêm danh mục</a>
+    <table>
+
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>action</th>
+            </tr>
+       
+        </thead>
+        <tbody>
+          
+      <%   for (const item of datacate) { %>
+            <tr>
+                <td><%= item.id %></td>
+                <td><%= item.name %></td>
+                <td>
+                 <a href="/edit/category/<%=item.id%>">sửa</a>
+                 <a onclick="acceptdelete('/delete/category/<%=item.id%>')">xóa</a>
+                </td>
+
+            </tr>
+<%} %>
+        </tbody>
+    </table>
+    <script>        const acceptdelete = (a) => {
+        if (confirm("bạn chắc chắn xóa?")) {
+          return (window.location = a);
+        }
+      };
+      </script>
+</body>
+</html>

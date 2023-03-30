@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/js/script.js">
+</head>
+<body>
+    <div class="topnav">
+        <a class="active" href="/">Home</a>
+        <a class="active" href="/upload">upload</a>
+        <a href="/category">category</a>
+      
+      </div>
+    <h1>
+        edit category
+    </h1>
+    <form action="/editpost/category/<%= onecate.id%>" method="post">
+        <label for="">name</label>
+        <input type="text" value="<%= onecate.name%>" name="name">
+        <button name="add">sua</button>
+    </form>
+</body>
+</html>

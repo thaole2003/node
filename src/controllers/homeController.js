@@ -22,11 +22,11 @@ let getController = async (req, res) => {
     datauser: rows,
   });
 };
-let uploadd = async (req, res) => {
-  return res.render("product/upload.ejs");
+
+let getUploadFilePage = async (req, res) => {
+  return res.render("product/uploadFile.ejs");
 };
 
-// const handleupload = async (req,res)=>{
 const upload = multer().single("profile_pic");
 
 let handleUploadFile = async (req, res) => {
@@ -52,7 +52,6 @@ let handleUploadFile = async (req, res) => {
     );
   });
 };
-// }
 const adduser = (req, res) => {
   return res.render("product/add.ejs");
 };
@@ -103,5 +102,6 @@ module.exports = {
   deleteuser,
   edituser,
   handleedituser,
-  uploadd,
+  getUploadFilePage,
+  handleUploadFile,
 };
